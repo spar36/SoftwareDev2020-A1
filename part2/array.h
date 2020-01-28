@@ -6,7 +6,8 @@
  * Object wrapper for a raw array.
  * authors: white.eva, mawrey.d
  */
-class Array : public Object {
+class Array : public Object
+{
 public:
   // Array members are initialized to nullptr.
   Array(size_t capacity);
@@ -38,7 +39,8 @@ public:
   size_t cap;
 };
 
-class StringArray : public Array {
+class StringArray : public Array
+{
 public:
   StringArray(size_t capacity);
   ~StringArray();
@@ -46,4 +48,35 @@ public:
   String *get(size_t idx);            // exit(1) on error
   String *set(size_t idx, String *o); // exit(1) on error
   String *remove(size_t idx);         // exit(1) on error
+};
+
+class IntArray : public Array
+{
+public:
+  IntArray(size_t capacity);
+  ~IntArray();
+
+  int *get(size_t idx);         // exit(1) on error
+  int *set(size_t idx, int *o); // exit(1) on error
+  int *remove(size_t idx);      // exit(1) on error
+};
+class FloatArray : public Array
+{
+public:
+  FloatArray(size_t capacity);
+  ~FloatArray();
+
+  float *get(size_t idx);           // exit(1) on error
+  float *set(size_t idx, float *o); // exit(1) on error
+  float *remove(size_t idx);        // exit(1) on error
+};
+class BoolArray : public Array
+{
+public:
+  BoolArray(size_t capacity);
+  ~BoolArray();
+
+  bool *get(size_t idx);          // exit(1) on error
+  bool *set(size_t idx, bool *o); // exit(1) on error
+  bool *remove(size_t idx);       // exit(1) on error
 };
