@@ -1,11 +1,10 @@
 #pragma once
 #include "helper.h"
-//lang::CwC
-/**                                                                              
- * A class that represents the top of the object hierarchy.                      
+// lang::CwC
+/**
+ * A class that represents the top of the object hierarchy.
  * author: vitekj@me.com */
-class Object : public Sys
-{
+class Object : public Sys {
 public:
   size_t hash_; // cache the hash value
 
@@ -15,8 +14,8 @@ public:
   /** Default constructor is virtual to support subclasses */
   virtual ~Object();
 
-  /** Returns the object's hash value. Two objects that are equal should         
-   * have the same hash; object's that are not, may have the same hash.          
+  /** Returns the object's hash value. Two objects that are equal should
+   * have the same hash; object's that are not, may have the same hash.
    * Subclasses should implement hash_me_(). */
   size_t hash();
 

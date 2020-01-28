@@ -1,14 +1,13 @@
 #pragma once
-//lang::CwC
+// lang::CwC
 #include "object.h"
 #include <cassert>
-/**                                                                              
- * An immutable string class. Values passed in are copied and deleted            
- * upon destruction.                                                             
- * author: vitekj@me.com                                                         
+/**
+ * An immutable string class. Values passed in are copied and deleted
+ * upon destruction.
+ * author: vitekj@me.com
  */
-class String : public Object
-{
+class String : public Object {
 public:
   char *val_;   // data
   size_t size_; // number of characters (excluding \0)
@@ -19,9 +18,9 @@ public:
   /** Construct a string copying s */
   String(const char *s);
 
-  /** This constructor takes ownership of the char* s. The char*                 
-   *  will be delete with the string. Use with caution. The first                
-   *  argument is there to differentiate this constructor from the               
+  /** This constructor takes ownership of the char* s. The char*
+   *  will be delete with the string. Use with caution. The first
+   *  argument is there to differentiate this constructor from the
    *  standard one. */
   String(bool steal, char *s);
 
@@ -31,7 +30,7 @@ public:
   /** Compare strings for equality. */
   bool equals(Object *other);
 
-  /** Returns 0 if strings are equal, >0 if this string is larger,               
+  /** Returns 0 if strings are equal, >0 if this string is larger,
    *  <0 otherwise */
   int compare(String *tgt);
 
