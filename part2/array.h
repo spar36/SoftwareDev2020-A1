@@ -22,10 +22,10 @@ public:
   size_t count();
   // Gets the element at the specified index
   Object *get(size_t idx);
-  // Sets the element at the specified index to object o and takes ownership 
+  // Sets the element at the specified index to object o and takes ownership
   // of o. Returns o.
   Object *set(size_t idx, Object *o);
-  // Removes and returns the element at the given index. 
+  // Removes and returns the element at the given index.
   // exit(1) on error.
   Object *remove(size_t idx);
 
@@ -36,11 +36,6 @@ public:
   bool equals(Object &o);
   // Identifiable hash.
   size_t hash();
-
-  // The array that will contain the elements.
-  Object *arr;
-  // The maximum capacity of the array.
-  size_t cap;
 };
 
 class StringArray : public Array {
@@ -62,9 +57,9 @@ public:
   IntArray(int* values);
   ~IntArray();
 
-  int *get(size_t idx);
-  int *set(size_t idx, int *o);
-  int *remove(size_t idx);      // exit(1) on error
+  int get(size_t idx);
+  int set(size_t idx, int o);
+  int remove(size_t idx);      // exit(1) on error
 };
 
 class FloatArray : public Array {
@@ -74,9 +69,9 @@ public:
   FloatArray(float* values);
   ~FloatArray();
 
-  float *get(size_t idx);
-  float *set(size_t idx, float *o);
-  float *remove(size_t idx);        // exit(1) on error
+  float get(size_t idx);
+  float set(size_t idx, float o);
+  float remove(size_t idx);        // exit(1) on error
 };
 
 class BoolArray : public Array {
@@ -86,7 +81,7 @@ public:
   BoolArray(bool* values);
   ~BoolArray();
 
-  bool *get(size_t idx);
-  bool *set(size_t idx, bool *o);
-  bool *remove(size_t idx);       // exit(1) on error
+  bool get(size_t idx);
+  bool set(size_t idx, bool o);
+  bool remove(size_t idx);       // exit(1) on error
 };

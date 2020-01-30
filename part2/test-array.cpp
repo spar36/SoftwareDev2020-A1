@@ -162,9 +162,9 @@ void test5() {
   TEST(arr.count() == 0);
   TEST(strcmp(arr.to_string(), "") == 0);
 
-  arr.set(0, &i1);
-  arr.set(1, &i2);
-  arr.set(2, &i3);
+  arr.set(0, i1);
+  arr.set(1, i2);
+  arr.set(2, i3);
 
   TEST(arr.count() == 3);
   TEST(strcmp(arr.to_string(), "1, 5, 7") == 0);
@@ -175,7 +175,7 @@ void test5() {
   TEST(arr.count() == 2);
   TEST(strcmp(arr.to_string(), "1, 7") == 0);
 
-  arr.set(3, &i4);
+  arr.set(3, i4);
 
   TEST(arr.get(1) == arr.get(3));
 
@@ -195,9 +195,9 @@ void test6() {
   TEST(arr.count() == 0);
   TEST(strcmp(arr.to_string(), "") == 0);
 
-  arr.set(0, &f1);
-  arr.set(1, &f2);
-  arr.set(2, &f3);
+  arr.set(0, f1);
+  arr.set(1, f2);
+  arr.set(2, f3);
 
   TEST(arr.count() == 3);
   TEST(strcmp(arr.to_string(), "1.5, 5.7, 7") == 0);
@@ -208,7 +208,7 @@ void test6() {
   TEST(arr.count() == 2);
   TEST(strcmp(arr.to_string(), "1.5, 7") == 0);
 
-  arr.set(3, &f4);
+  arr.set(3, f4);
 
   TEST(arr.get(1) == arr.get(3)); // should be ok without epsilon
 
@@ -227,9 +227,9 @@ void test7() {
   TEST(arr.count() == 0);
   TEST(strcmp(arr.to_string(), "") == 0);
 
-  arr.set(0, &b1);
-  arr.set(1, &b2);
-  arr.set(2, &b3);
+  arr.set(0, b1);
+  arr.set(1, b2);
+  arr.set(2, b3);
 
   TEST(arr.count() == 3);
   TEST(strcmp(arr.to_string(), "true, false, true") == 0);
