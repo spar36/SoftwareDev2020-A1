@@ -15,7 +15,8 @@ public:
   // Array members are initialized to the corresponding values passed in
   Array(Object *values);
 
-  // Array takes ownership of objects, i.e. calls delete on members.
+  // Arrays do not take ownership so that delete is not called on objects that
+  // were not created with new.
   virtual ~Array();
 
   // Returns the number of non-nullptr elements. Not necessarily sequential.
