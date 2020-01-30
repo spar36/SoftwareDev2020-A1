@@ -98,8 +98,8 @@ void test3() {
   Array arr1(5);
   Array arr2(5);
 
-  TEST(arr1.equals(arr2));
-  TEST(arr2.equals(arr1));
+  TEST(arr1.equals(&arr2));
+  TEST(arr2.equals(&arr1));
 
   Object o1;
   Object o2;
@@ -108,16 +108,16 @@ void test3() {
   arr1.set(0, &o1);
   arr2.set(0, &o1);
 
-  TEST(arr1.equals(arr2));
-  TEST(arr2.equals(arr1));
+  TEST(arr1.equals(&arr2));
+  TEST(arr2.equals(&arr1));
 
   arr2.set(1, &o2);
 
-  TEST(!arr1.equals(arr2));
-  TEST(!arr2.equals(arr1));
+  TEST(!arr1.equals(&arr2));
+  TEST(!arr2.equals(&arr1));
 
-  TEST(!arr1.equals(o1));
-  TEST(!arr2.equals(o1));
+  TEST(!arr1.equals(&o1));
+  TEST(!arr2.equals(&o1));
 
   PASS();
 }
