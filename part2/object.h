@@ -1,33 +1,27 @@
-#pragma once
-#include "helper.h"
 // lang::CwC
+#pragma once
+
+#include <cstdlib>
+
 /**
  * A class that represents the top of the object hierarchy.
- * author: vitekj@me.com */
-class Object : public Sys {
+ * author: chasebish */
+class Object {
 public:
-  size_t hash_; // cache the hash value
+  /** CONSTRUCTORS & DESTRUCTORS **/
 
-  /** Default constructor ensure that hash is initialized */
+  /* Default Object constructor */
   Object();
 
-  /** Default constructor is virtual to support subclasses */
+  /* Default Object destructor, to be overriden by subclasses */
   virtual ~Object();
 
-  /** Returns the object's hash value. Two objects that are equal should
-   * have the same hash; object's that are not, may have the same hash.
-   * Subclasses should implement hash_me_(). */
-  size_t hash();
+  /** VIRTUAL METHODS **/
 
-  /** Trivial hash function. */
-  virtual size_t hash_me_();
+  /* Returns whether two objects are equal, to be overriden by subclasses */
+  virtual bool equals(Object *const obj);
 
-  /** Use the address of the other object to determine equality. */
-  virtual bool equals(Object *other);
-
-  /** Return a newly allocated string describin the object */
-  virtual char *to_string();
-
-  /** Print to stdout. */
-  virtual void print();
+  /* Returns an object's hash value. Identical objects should have identical
+   * hashes */
+  virtual size_t hash();
 };

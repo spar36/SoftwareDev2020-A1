@@ -13,7 +13,7 @@ public:
   // Array members are initialized to nullptr.
   Array(size_t capacity);
   // Array members are initialized to the corresponding values passed in
-  Array(Object* values);
+  Array(Object *values);
 
   // Array takes ownership of objects, i.e. calls delete on members.
   virtual ~Array();
@@ -31,64 +31,76 @@ public:
   // Removes and returns the element at the given index.
   // exit(1) on error.
   Object *remove(size_t idx);
-
-  // Returns a character array representation of this array's data.
-  char *to_string();
-  // Comparision operator.
-  bool equals(Object *o);
-  bool equals(Object &o);
-  // Identifiable hash.
-  size_t hash();
 };
 
-class StringArray : public Array {
+// you may inherit from Array
+class StringArray : public Object {
 public:
   StringArray();
   StringArray(size_t capacity);
-  StringArray(String* values);
+  StringArray(String *values);
   ~StringArray();
 
+  size_t count();
   String *get(size_t idx);
   String *set(size_t idx, String *o);
   String *push_back(String *o);
-  String *remove(size_t idx);         // exit(1) on error
+  String *remove(size_t idx);
+
+  // Returns a character array representation of this array's data.
+  char *to_string(); // exit(1) on error
 };
 
-class IntArray : public Array {
+// you may inherit from Array
+class IntArray : public Object {
 public:
   IntArray();
   IntArray(size_t capacity);
-  IntArray(int* values);
+  IntArray(int *values);
   ~IntArray();
 
+  size_t count();
   int get(size_t idx);
   int set(size_t idx, int o);
   int push_back(int o);
-  int remove(size_t idx);      // exit(1) on error
+  int remove(size_t idx); // exit(1) on error
+
+  // Returns a character array representation of this array's data.
+  char *to_string();
 };
 
-class FloatArray : public Array {
+// you may inherit from Array
+class FloatArray : public Object {
 public:
   FloatArray();
   FloatArray(size_t capacity);
-  FloatArray(float* values);
+  FloatArray(float *values);
   ~FloatArray();
 
+  size_t count();
   float get(size_t idx);
   float set(size_t idx, float o);
   float push_back(float o);
-  float remove(size_t idx);        // exit(1) on error
+  float remove(size_t idx); // exit(1) on error
+
+  // Returns a character array representation of this array's data.
+  char *to_string();
 };
 
-class BoolArray : public Array {
+// you may inherit from Array
+class BoolArray : public Object {
 public:
   BoolArray();
   BoolArray(size_t capacity);
-  BoolArray(bool* values);
+  BoolArray(bool *values);
   ~BoolArray();
 
+  size_t count();
   bool get(size_t idx);
   bool set(size_t idx, bool o);
   bool push_back(bool o);
-  bool remove(size_t idx);       // exit(1) on error
+  bool remove(size_t idx); // exit(1) on error
+
+  // Returns a character array representation of this array's data.
+  char *to_string();
 };
