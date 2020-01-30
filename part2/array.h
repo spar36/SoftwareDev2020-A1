@@ -23,18 +23,21 @@ public:
   // Gets the element at the specified index
   Object *get(size_t idx);
   // Sets the element at the specified index to object o and takes ownership
-  // of o. Returns o.
-  Object *set(size_t idx, Object *o);
+  // of o.
+  void set(size_t idx, Object *o);
   // Appends the element to the end of the array. The end of the array is
   // defined as the element following the last non-null element.
-  Object *push_back(Object *o);
+  void push_back(Object *o);
+  // Appends all non-null elements of given array to the end of this array. The
+  // end of the array is defined as the element following the last non-null
+  // element.
+  void push_back_all(Array *o);
   // Removes and returns the element at the given index.
   // exit(1) on error.
   Object *remove(size_t idx);
 };
 
-// you may inherit from Array
-class StringArray : public Object {
+class StringArray : public Array {
 public:
   StringArray();
   StringArray(size_t capacity);
@@ -43,8 +46,9 @@ public:
 
   size_t count();
   String *get(size_t idx);
-  String *set(size_t idx, String *o);
-  String *push_back(String *o);
+  void set(size_t idx, String *o);
+  void push_back(String *o);
+  void push_back_all(StringArray *o);
   String *remove(size_t idx);
 
   // Returns a character array representation of this array's data.
@@ -63,6 +67,7 @@ public:
   int get(size_t idx);
   int set(size_t idx, int o);
   int push_back(int o);
+  void push_back_all(IntArray *o);
   int remove(size_t idx); // exit(1) on error
 
   // Returns a character array representation of this array's data.
@@ -81,6 +86,7 @@ public:
   float get(size_t idx);
   float set(size_t idx, float o);
   float push_back(float o);
+  void push_back_all(FloatArray *o);
   float remove(size_t idx); // exit(1) on error
 
   // Returns a character array representation of this array's data.
@@ -99,6 +105,7 @@ public:
   bool get(size_t idx);
   bool set(size_t idx, bool o);
   bool push_back(bool o);
+  void push_back_all(BoolArray *o);
   bool remove(size_t idx); // exit(1) on error
 
   // Returns a character array representation of this array's data.
