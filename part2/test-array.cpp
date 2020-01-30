@@ -6,18 +6,14 @@
 
 using namespace std;
 
-void TESTN(size_t n) {
-  cout << "Test " << n << endl;
-}
+void TESTN(size_t n) { cout << "Test " << n << endl; }
 
 void FAIL() {
   cout << "Failure" << endl;
   exit(0);
 }
 
-void PASS() {
-  cout << "Test Passed" << endl;
-}
+void PASS() { cout << "Test Passed" << endl; }
 
 void TEST(bool q) {
   if (!q)
@@ -29,7 +25,7 @@ void test0() {
   cout << "Creation" << endl;
 
   Array arr1(5);
-  Array* arr2 = new Array(5);
+  Array *arr2 = new Array(5);
   delete arr2;
 
   PASS();
@@ -133,7 +129,7 @@ void test4() {
   StringArray arr(5);
   String s1("Hello");
   String s2("World");
-  String* s3 = new String("FooBar");
+  String *s3 = new String("FooBar");
 
   TEST(arr.count() == 0);
   TEST(strcmp(arr.to_string(), "") == 0);
@@ -215,7 +211,7 @@ void test6() {
 
   arr.set(3, f4);
 
-  TEST(arr.get(1) == arr.get(3));  // should be ok without epsilon
+  TEST(arr.get(1) == arr.get(3)); // should be ok without epsilon
 
   PASS();
 }
@@ -254,7 +250,7 @@ void test8() {
   cout << "Push and Push All - Object" << endl;
   Array a1;
   Object o1;
-  Object* o2 = new Object();
+  Object *o2 = new Object();
 
   a1.push_back(&o1);
   a1.push_back(o2);
@@ -263,8 +259,8 @@ void test8() {
   TEST(a1.get(1)->equals(o2));
   TEST(a1.count() == 2);
 
-  Array* a2 = new Array();
-  Object* o3 = new Object();
+  Array *a2 = new Array();
+  Object *o3 = new Object();
 
   a2->push_back(o3);
 
@@ -289,7 +285,7 @@ void test9() {
   cout << "Push and Push All - String" << endl;
   StringArray a1;
   String o1("Hello");
-  String* o2 = new String("World");
+  String *o2 = new String("World");
 
   a1.push_back(&o1);
   a1.push_back(o2);
@@ -297,8 +293,8 @@ void test9() {
   TEST(strcmp(a1.to_string(), "Hello, World") == 0);
   TEST(a1.count() == 2);
 
-  StringArray* a2 = new StringArray();
-  String* o3 = new String("Why");
+  StringArray *a2 = new StringArray();
+  String *o3 = new String("Why");
 
   a2->push_back(o3);
 
@@ -327,7 +323,7 @@ void test10() {
   TEST(strcmp(a1.to_string(), "1, 2") == 0);
   TEST(a1.count() == 2);
 
-  IntArray* a2 = new IntArray();
+  IntArray *a2 = new IntArray();
 
   a2->push_back(0);
 
@@ -355,7 +351,7 @@ void test11() {
   TEST(strcmp(a1.to_string(), "1, 1.5") == 0);
   TEST(a1.count() == 2);
 
-  FloatArray* a2 = new FloatArray();
+  FloatArray *a2 = new FloatArray();
 
   a2->push_back(0.5f);
 
@@ -384,7 +380,7 @@ void test12() {
   TEST(strcmp(a1.to_string(), "true, false, true") == 0);
   TEST(a1.count() == 3);
 
-  BoolArray* a2 = new BoolArray();
+  BoolArray *a2 = new BoolArray();
 
   a2->push_back(false);
 
