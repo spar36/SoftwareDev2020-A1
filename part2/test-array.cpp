@@ -178,7 +178,7 @@ void test5() {
 
   arr.set(3, i4);
 
-  TEST(arr.get(1) == arr.get(3));
+  TEST(arr.get(1) == 7.0f);
 
   PASS();
 }
@@ -211,7 +211,7 @@ void test6() {
 
   arr.set(3, f4);
 
-  TEST(arr.get(1) == arr.get(3)); // should be ok without epsilon
+  TEST(arr.get(1) == 7.0f); // should be ok without epsilon
 
   PASS();
 }
@@ -389,7 +389,7 @@ void test12() {
 
   a2->push_back_all(&a1);
 
-  TEST(a2->count() == 3);
+  TEST(a2->count() == 4);
   TEST(strcmp(a2->to_string(), "false, true, false, true") == 0);
 
   delete a2;
