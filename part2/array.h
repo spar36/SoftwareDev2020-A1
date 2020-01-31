@@ -66,8 +66,8 @@ public:
 
   size_t count();
   int get(size_t idx);
-  int set(size_t idx, int o);
-  int push_back(int o);
+  void set(size_t idx, int o);
+  void push_back(int o);
   void push_back_all(IntArray *o);
   int remove(size_t idx); // exit(1) on error
 
@@ -85,8 +85,8 @@ public:
 
   size_t count();
   float get(size_t idx);
-  float set(size_t idx, float o);
-  float push_back(float o);
+  void set(size_t idx, float o);
+  void push_back(float o);
   void push_back_all(FloatArray *o);
   float remove(size_t idx); // exit(1) on error
 
@@ -104,8 +104,8 @@ public:
 
   size_t count();
   bool get(size_t idx);
-  bool set(size_t idx, bool o);
-  bool push_back(bool o);
+  void set(size_t idx, bool o);
+  void push_back(bool o);
   void push_back_all(BoolArray *o);
   bool remove(size_t idx); // exit(1) on error
 
