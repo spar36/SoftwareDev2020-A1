@@ -303,7 +303,7 @@ void test9() {
   a2->push_back_all(&a1);
 
   TEST(a2->count() == 3);
-  TEST(strcmp(a1.to_string(), "Why, Hello, World") == 0);
+  TEST(strcmp(a2->to_string(), "Why, Hello, World") == 0);
 
   delete a2;
   delete o2;
@@ -333,7 +333,7 @@ void test10() {
   a2->push_back_all(&a1);
 
   TEST(a2->count() == 3);
-  TEST(strcmp(a1.to_string(), "0, 1, 2") == 0);
+  TEST(strcmp(a2->to_string(), "0, 1, 2") == 0);
 
   delete a2;
 
@@ -361,7 +361,7 @@ void test11() {
   a2->push_back_all(&a1);
 
   TEST(a2->count() == 3);
-  TEST(strcmp(a1.to_string(), "0.5, 1, 1.5") == 0);
+  TEST(strcmp(a2->to_string(), "0.5, 1, 1.5") == 0);
 
   delete a2;
 
@@ -390,7 +390,7 @@ void test12() {
   a2->push_back_all(&a1);
 
   TEST(a2->count() == 3);
-  TEST(strcmp(a1.to_string(), "false, true, false, true") == 0);
+  TEST(strcmp(a2->to_string(), "false, true, false, true") == 0);
 
   delete a2;
 
